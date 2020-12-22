@@ -1,0 +1,75 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Index
+    //- Common styles
+    link(rel="stylesheet", href="stylesheets/index.css")
+    link(rel="stylesheet", href="stylesheets/service-styles.css")
+    //- Components styles
+    //- link(rel="stylesheet", href="stylesheets/button.css")
+    //- link(rel="stylesheet", href="stylesheets/input-group.css")
+    //- link(rel="stylesheet", href="stylesheets/form-control.css")
+    //- link(rel="stylesheet", href="stylesheets/breadcrumbs.css")
+    //- link(rel="stylesheet", href="stylesheets/pagination.css")
+    link(rel="stylesheet", href="stylesheets/bundle.css")
+
+    script(src="javascripts/jquery.min.js")
+    script(src="javascripts/main.js")
+    //- script
+    //-   include index.js
+  body
+    .container
+      .row
+        .col-12.my-5
+          ul.breadcrumbs
+            each breadcrumb in mp_components_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include components/breadcrumbs/breadcrumbs__item
+    include layouts/typography_container
+    .container
+      .row
+        .col-12.mt-5
+          ul.breadcrumbs
+            each breadcrumb in mp_button_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include components/breadcrumbs/breadcrumbs__item
+    include layouts/simple_buttons_container
+    include layouts/combined_buttons_container
+    .container
+      .row
+        .col-12.mt-3.mb-5
+          ul.breadcrumbs
+            each breadcrumb in mp_input_group_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include components/breadcrumbs/breadcrumbs__item
+    include layouts/inputs_container
+    include components/brand-colors-palette
+    .container 
+      .row
+        .col-12.mb-5.d-flex.flex-wrap
+          include components/custom-checkbox/custom-checkbox
+          .ml-3
+          include components/custom-checkbox/custom-checkbox_disabled
+          .ml-3
+          include components/custom-checkbox/custom-checkbox_checked
+          .ml-3
+          include components/custom-checkbox/custom-checkbox_secondary
+          .ml-5
+          include components/custom-radio/custom-radio
+          .ml-3
+          include components/custom-radio/custom-radio_disabled
+          .ml-3
+          include components/custom-radio/custom-radio_checked 
+          .ml-3
+          include components/custom-radio/custom-radio_secondary
+

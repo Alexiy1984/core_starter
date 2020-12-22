@@ -1,0 +1,82 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Index
+    link(rel="stylesheet", href="../../stylesheets/index.css")
+    link(rel="stylesheet", href="../../stylesheets/breadcrumbs.css")
+
+    link(rel="stylesheet", href="../../stylesheets/tabs.css")
+    script(src="../../javascripts/jquery.min.js")
+    script(src="../../javascripts/bootstrap.bundle.min.js")
+  body
+    .container
+      .row.my-5
+        .col-12.mb-3
+          ul.breadcrumbs
+            each breadcrumb in sp_tabs_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include ../breadcrumbs/breadcrumbs__item
+      .row
+        .col-12.mb-2
+          include tabs_small
+          hr
+        .col-12.mb-2
+          include tabs
+          hr
+        .col-12.mb-5
+          include tabs_large
+          hr
+        .col-12.mb-2
+          - var tabs_id = 'tab-secondary-small';
+          - var tabs_color_class = 'nav-tabs_secondary';
+          - var tabs_size_class = 'nav-tabs_small';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr 
+        .col-12.mb-2
+          - var tabs_id = 'tab-secondary';
+          - var tabs_color_class = 'nav-tabs_secondary';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr    
+        .col-12.mb-5
+          - var tabs_id = 'tab-secondary-large';
+          - var tabs_color_class = 'nav-tabs_secondary';
+          - var tabs_size_class = 'nav-tabs_large';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr 
+        .col-12.mb-2
+          - var tabs_id = 'tab-dark-small';
+          - var tabs_color_class = 'nav-tabs_dark';
+          - var tabs_size_class = 'nav-tabs_small';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr 
+        .col-12.mb-2
+          - var tabs_id = 'tab-dark';
+          - var tabs_color_class = 'nav-tabs_dark';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr    
+        .col-12.mb-5
+          - var tabs_id = 'tab-dark-large';
+          - var tabs_color_class = 'nav-tabs_dark';
+          - var tabs_size_class = 'nav-tabs_large';
+          - var tabs_content = [{tabname: 'Tab 1', tabcontent: 'Some content'},{tabname: 'Tab 2', tabcontent: 'Some content even more'},{tabname: 'Tab 3', tabcontent: 'Anoter content'}];
+          include tabs_generate
+          hr               
+        .col-12.mb-2
+          include pills_large
+          hr
+        .col-12.mb-2
+          include pills
+          hr  
+        .col-12.mb-2
+          include pills_small
+          hr    
+      

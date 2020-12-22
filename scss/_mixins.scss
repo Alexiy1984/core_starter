@@ -1,0 +1,111 @@
+// Mixin for set button state colors ->
+@mixin button_colors($colorset) {
+  $_temp_normal: #000, #fff, rgba(0, 0, 0, 0);
+  $_temp_hover: #000, #fff, rgba(0, 0, 0, 0);
+
+  @if (map-has-key($colorset , 'normal_colors')) {
+    @include set_colors(map-get($colorset , 'normal_colors'));
+    $_temp_normal: map-get($colorset , 'normal_colors');
+  } @else {
+    @include set_colors($_temp_normal);
+  } 
+
+  &:hover {
+    @if (map-has-key($colorset , 'hover_colors')) {
+      @include set_colors(map-get($colorset , 'hover_colors'));
+      $_temp_hover: map-get($colorset , 'hover_colors');
+    } @else {
+      @include set_colors($_temp_normal);
+      $_temp_hover: $_temp_normal;
+    }
+  }
+
+  &:visited {
+    @if (map-has-key($colorset , 'visited_colors')) {
+      @include set_colors(map-get($colorset , 'visited_colors'));
+    } @else {
+      @include set_colors($_temp_normal);
+    }
+  }
+
+  &:active {
+    @if (map-has-key($colorset , 'active_colors')) {
+      @include set_colors(map-get($colorset , 'active_colors'));
+    } @else {
+      @include set_colors($_temp_hover);
+    }
+  }
+}
+
+@mixin set_colors($colorset) {
+  @if type-of($colorset) == list {
+    color: nth($colorset, 1);
+    background-color: nth($colorset, 2);
+    @if (length($colorset) > 2) {
+      border-color: nth($colorset, 3);
+    }
+    @else {
+      border-color: nth($colorset, 2);
+
+      & > svg {
+        fill: nth($colorset, 1);
+      }
+    } 
+    @if (length($colorset) > 3) {
+      & > svg {
+        fill: nth($colorset, 4);
+      }
+    }
+    @else {
+      & > svg {
+        fill: nth($colorset, 1);
+      }
+    }
+  }
+}
+
+// Mixin for set button state colors <-
+
+// Mixin for set font sizes ->
+
+$breakpoints: (
+  extra-small: 320px,
+  small: 375px,
+  mobile: 575px,
+  tablet: 768px,
+  medium: 992px,
+  large: 1200px,
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+@mixin make-font-size($fs-font-size) {
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+    @if (length($fs-font-size) > 2) {
+      letter-spacing: nth($fs-font-size, 3);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+// Mixin for set font sizes <-

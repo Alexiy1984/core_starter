@@ -1,0 +1,65 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: map_get($theme, 'grey-dark_2');
+  height: 24px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  margin: 0;
+  padding: 3px 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    & + span {
+      margin-left: 5px;
+    }
+  }
+
+  svg {
+    margin-right: -5px;
+    width: 15px;
+    height: 15px;
+    fill: map_get($theme, 'grey-dark_6');
+
+    & + span {
+      margin-left: 5px;
+    }
+  }
+
+  span {
+    & + svg {
+      margin-left: 5px;
+    }
+
+    & + a {
+      margin-left: 5px;
+    }
+  }
+
+  &_accent_1 {
+    @extend .tag;
+    background-color: map_get($theme, 'accent_1_2');
+
+    svg {
+      fill: map_get($theme, 'accent_1_4');;
+    }
+  }
+
+  &_accent_2 {
+    @extend .tag;
+    background-color: map_get($theme, 'accent_2_2');
+
+    svg {
+      fill: map_get($theme, 'accent_2_4');;
+    }
+  }
+}

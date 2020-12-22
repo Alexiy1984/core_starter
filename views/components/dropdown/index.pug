@@ -1,0 +1,59 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_dropdown_breadcrumbs
+  - var title = 'Dropdown'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/dropdown.css")
+  link(rel="stylesheet", href="../../stylesheets/button.css")
+
+block append scripts
+  script(src="../../javascripts/bootstrap.bundle.min.js")
+
+block content
+  .row
+    .col-12.mb-4.d-flex.flex-wrap
+      .mr-3.mb-4
+        include dropdown
+      .mr-3.mb-4
+        include dropdown_with-right-icon  
+      .mr-3.mb-4  
+        include dropdown_with-left-icon 
+      .mr-3.mb-4  
+        include dropdown_with-icon-both
+      .mr-3.mb-4
+        include dropdown_with-checkbox
+      .mr-3.mb-4
+        include dropdown_with-radio 
+    .col-12.mb-4.d-flex.flex-wrap
+      .mr-3.mb-4
+        include dropdown_small 
+      .mr-3.mb-4
+        include dropdown_small_with-left-icon
+      .mr-3.mb-4
+        include dropdown_small_with-right-icon       
+      .mr-3.mb-4
+        include dropdown_small_with-checkbox
+      .mr-3.mb-4
+      include dropdown_small_with-radio
+    .col-12.mb-4.d-flex.flex-wrap
+      .mr-3.mb-4
+        include dropdown_large  
+      .mr-3.mb-4
+        include dropdown_large_with-left-icon  
+      .mr-3.mb-4
+        include dropdown_large_with-right-icon
+      .mr-3.mb-4
+        include dropdown_large_with-checkbox
+      .mr-3.mb-4
+        include dropdown_large_with-radio
+    .col-12.mb-4.d-flex.flex-wrap
+      .mr-3.mb-4
+        include dropdown_with-danger-button           
+      .mr-3.mb-4
+        include dropdown_with-primary-button
+      .mr-3.mb-4
+        include dropdown_with-succes-button
+      .mr-3.mb-4
+        include dropdown_with-warning-button 

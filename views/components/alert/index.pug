@@ -1,0 +1,22 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_alert_breadcrumbs
+  - var title = 'Allert Component'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/button.css")
+  link(rel="stylesheet", href="../../stylesheets/alert.css")
+
+block content
+  .row
+    .col-12.mb-4
+      button(type=button class='button_primary') Click me!
+      include alert
+      include alert_success
+      include alert_warning
+      include alert_danger
+      include alert_large
+      include alert_large_success
+      include alert_large_warning
+      include alert_large_danger  

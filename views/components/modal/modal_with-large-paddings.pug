@@ -1,0 +1,21 @@
+//- Button trigger modal
+button.button_outline(type='button' data-toggle='modal' data-target=`#${modal_id}`)= button_name
+//- Modal
+.modal.fade(tabindex='-1' role='dialog' aria-labelledby=`${modal_id}Label` aria-hidden='true' id= modal_id)
+  .modal-dialog(role='document')
+    .modal-content.modal-content_thin
+      .modal-header
+        button.button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        h4.text-center(style='margin-bottom: 12px;') Best UI releases every tuesday in your inbox
+        p.body_small.text-center.text_grey-dark_4(style='margin-bottom: 24px;') 
+          | Subscribe and receive our newsletters to follow the news about our fresh and fantastic products
+        .modal__combined-item
+          div(class='input-group input-group_noborder')
+            div(class='input-group-prepend')
+              span(class='input-group-text')
+                svg
+                  use(xlink:href="../../assets/svg/base-sprite/base-sprite.svg#Warning")
+            input(class='form-control' type='text' name='text-1' placeholder='Input group with append')
+          button.button_primary(type='button' data-dismiss='modal' aria-label='Close') Send

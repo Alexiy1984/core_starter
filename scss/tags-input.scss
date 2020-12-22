@@ -1,0 +1,70 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+.tags-input {
+  &__field {
+    border: 1px solid map_get($theme, 'grey-dark_2');
+    border-radius: map_get($theme, 'main-border-radius');
+    display: inline-flex;
+    outline: none;
+    min-height: 50px;
+    align-items: center;
+    padding: 3px 13px;
+    flex-wrap: wrap;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+
+    .tag {
+      margin: 5px 10px 5px 0;
+    }
+  }
+
+  &__input {
+    border: none;
+    font-weight: normal;
+    font-size: inherit;
+    letter-spacing: inherit;
+    color: map_get($theme, 'grey-dark_2');
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &_small {
+    &__field {
+      @extend .tags-input__field;
+      min-height: 40px;
+      padding: 3px 8px;
+      font-size: 16px;
+      letter-spacing: -0.5px;
+
+      .tag {
+        margin: 4px 10px 4px 0;
+      }
+    }
+
+    &__input {
+      @extend .tags-input__input;
+    }
+  }
+
+  &_large {
+    &__field {
+      @extend .tags-input__field;
+      min-height: 60px;
+      padding: 3px 18px;
+      font-size: 20px;
+      letter-spacing: -0.6px;
+
+      .tag {
+        margin: 8px 10px 8px 0;
+      }
+    }
+
+    &__input {
+      @extend .tags-input__input;
+    }
+  }
+}

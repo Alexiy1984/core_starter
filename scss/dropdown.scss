@@ -1,0 +1,192 @@
+@import "variables";
+@import "node_modules/bootstrap/scss/dropdown";
+
+$theme: $main_theme;
+
+@mixin create_sizes_for_elements($font_size, $padding_y, $padding_x, $height, $el_indents) {
+  height: $height#{'px'};
+  font-size: $font_size#{'px'};
+  padding: 0;
+
+  .btn,
+  .button,
+  .button_small,
+  .button_large,
+  .button_outline,
+  .button_primary,
+  .button_info,
+  .button_succes,
+  .button_danger,
+  .button_warning {
+    height: $height#{'px'};
+    padding: $padding_y#{'px'} $padding_x#{'px'};
+    font-size: $font_size#{'px'};
+    line-height: ($height - $padding_y*2)#{'px'};
+  }
+
+  .dropdown-item {
+    height: $height#{'px'};
+    padding: $padding_y#{'px'} $padding_x#{'px'};
+    font-size: $font_size#{'px'};
+    line-height: $height - $padding_y#{'px'};
+
+    svg {
+      width: $font_size#{'px'};
+      height: $font_size#{'px'};
+    }
+  
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: $font_size#{'px'};
+      height: $font_size#{'px'};
+      cursor: pointer;
+    }
+
+    span + svg,
+    span + input[type="checkbox"],
+    span + input[type="radio"] {
+      margin-left: $el_indents#{'px'};
+    }
+
+    input[type="radio"] + span,
+    input[type="checkbox"] + span,
+    svg + span {
+      margin-left: $el_indents#{'px'};
+    }
+  }
+}
+
+.dropdown {
+  $dropdown: &;
+  @include create_sizes_for_elements(18, 6, 18, 50, 9);
+
+  &-menu {
+    border-radius: map_get($theme, 'main-border-radius');
+    padding: 4px;
+    margin-top: 14px;
+    display: block;
+    visibility: hidden;
+    opacity:0;
+    transform: translateY(30px);
+    transition: 0.3s ease all;
+
+    &[x-placement='top-start'] {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    &.show {
+      transition: max-height 0.3s ease-in;
+      display: block;
+      visibility: visible;
+      opacity:1;transform: 
+      translateY(0px);
+      transition: 0.3s ease all;
+    }
+  }
+
+  &-item {
+    border-radius: map_get($theme, 'small-border-radius');
+    display: flex;
+    align-items: center;
+
+    input {
+      pointer-events: none;
+    }
+
+    input:checked + span {
+      color: map_get($theme, 'accent_1_4');
+    }
+
+    input:checked ~ span {
+      color: map_get($theme, 'accent_1_4');
+    }
+
+    &:hover {
+      color: map-get($theme, 'grey-dark_4');
+      background-color: map-get($theme, 'grey-dark_1');
+
+      svg {
+        fill: map-get($theme, 'grey-dark_4');
+      }
+    }
+
+    &:active {
+      color: #fff;
+      background-color: map-get($theme, 'accent_1_4');
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+
+  &-toggle {
+    &::after {
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+      content: "";
+      border-top: 7px solid;
+      border-right: 6px solid transparent;
+      border-bottom: 0;
+      border-left: 6px solid transparent;
+      transition: border ease-in 0.3s;
+    }
+  }
+
+  &.show {
+    #{$dropdown}-toggle {
+      &::after {
+        border-top: 0;
+        border-right: 6px solid transparent;
+        border-bottom: 7px solid;
+        border-left: 6px solid transparent;
+      }  
+    }
+  }
+
+  &.fixed-size {
+    min-width: 220px;
+    display: inline-block;
+
+    #{$dropdown} {
+      &-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 100%;
+        text-align: start;
+        margin-right: 16px;
+        
+        &::after {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+    
+      &-menu {
+        min-width: 100%;
+        text-align: start;
+      }
+    }
+  }
+
+  &_small {
+    @extend .dropdown;
+    @include create_sizes_for_elements(16, 6, 14, 40, 8.33);
+    
+    &.fixed-size {
+      min-width: 190px;
+    }
+  }
+
+  &_large {
+    @extend .dropdown;
+    @include create_sizes_for_elements(20, 6, 22, 60, 11);
+
+    &.fixed-size {
+      min-width: 270px;
+    }
+  }
+}

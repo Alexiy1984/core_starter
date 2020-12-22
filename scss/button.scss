@@ -1,0 +1,340 @@
+@import "variables";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/input-group";
+
+$theme: $main_theme;
+
+.button {
+  @extend .btn;
+  border-radius: map_get($theme, 'main-border-radius');
+  font-size: 18px;
+  line-height: 38px;
+  font-weight: 500;
+  height: 50px;
+  padding-left: 18px;
+  padding-right: 18px;
+  white-space: nowrap;
+  transition: color 0.15s ease-in, border-color 0.15s ease-in, background-color 0.15s ease-in;
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    fill: #fff;
+    margin-bottom: 2px;
+    transition: fill 0.15s ease-in;
+
+    & + span {
+      margin-left: 11px;
+    }
+    
+    & * {
+      fill: inherit;
+      stroke: inherit;
+    }
+  }
+
+  span {
+    & + svg {
+      margin-left: 11px;
+    }
+  }
+
+  &_rounded {
+    @extend .button;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  &_small {
+    @extend .button;
+    height: 40px;
+    font-size: 16px;
+    line-height: 28px;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-bottom: 2px;
+
+      & + span {
+        margin-left: 9px;
+      }
+    }
+
+    span {
+      & + svg {
+        margin-left: 9px;
+      }
+    }
+
+    &.button_rounded {
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &_large {
+    @extend .button;
+    height: 60px;
+    line-height: 48px;
+    font-size: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 2px;
+
+      & + span {
+        margin-left: 14px;
+      }
+    }
+
+    span {
+      & + svg {
+        margin-left: 14px;
+      }
+    }
+
+    &.button_rounded {
+      border-radius: 30px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &_primary {
+    @extend .button;
+    @include button_colors($primary_button_colorset);
+  }
+
+  &_outline {
+    @extend .button;
+    @include button_colors($outline_button_colorset);
+  }
+
+  &_disabled {
+    @extend .button;
+    background-color: rgba($color: (#000000), $alpha: 0.05);
+    color: rgba($color: #000000, $alpha: 0.3);
+    border-color: rgba($color: #000000, $alpha: 0.1);
+
+    svg {
+      fill: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    &:hover {
+      color: rgba($color: #000000, $alpha: 0.3);
+      cursor: default !important;
+    }
+  }
+
+  &_danger {
+    @extend .button;
+    @include button_colors($danger_button_colorset);
+  }
+
+  &_success {
+    @extend .button;
+    @include button_colors($success_button_colorset);
+  }
+
+  &_warning {
+    @extend .button;
+    @include button_colors($warning_button_colorset);
+  }
+
+  &_for-input {
+    @extend .button;
+    color: map_get($theme, 'grey-dark_3');
+  }
+}
+
+.btn-group {
+  .button {
+    border-width: 1px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-bottom: 2px;
+
+      & + span {
+        margin-left: 11px;
+      }
+    }
+
+    span {
+      & + svg {
+        margin-left: 11px;
+      }
+    }
+  }
+
+  .dropdown_small,
+  &_small {
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+      height: 40px;
+      font-size: 16px;
+      line-height: 28px;
+      padding-left: 14px;
+      padding-right: 14px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        margin-bottom: 2px;
+
+        & + span {
+          margin-left: 9px;
+        }
+      }
+
+      span {
+        & + svg {
+          margin-left: 9px;
+        }
+      }
+    }
+  }
+
+  .dropdown_large,
+  &_large {
+    @extend .btn-group;
+     
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+      height: 60px;
+      line-height: 48px;
+      font-size: 20px;
+      padding-left: 22px;
+      padding-right: 22px;
+
+      svg {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 2px;
+
+        & + span {
+          margin-left: 14px;
+        }
+      }
+
+      span {
+        & + svg {
+          margin-left: 14px;
+        }
+      }
+    }
+  }
+
+  &_primary {
+    @extend .btn-group;
+
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+
+      &.selected {
+        @include button_colors($primary_button_colorset);
+        z-index: 2;
+      }
+    }
+  }
+
+  &_danger {
+    @extend .btn-group;
+
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+
+      &.selected {
+        @include button_colors($danger_button_colorset);
+        z-index: 2;
+      }
+    }
+  }
+
+  &_warning {
+    @extend .btn-group;
+
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+
+      &.selected {
+        @include button_colors($warning_button_colorset);
+        z-index: 2;
+      }
+    }
+  }
+
+  &_success {
+    @extend .btn-group;
+
+    .button {
+      @extend .button_outline;
+
+      &.selected {
+        @include button_colors($success_button_colorset);
+        z-index: 2;
+      }
+    }
+  }
+
+  &_colorfull {
+    @extend .btn-group;
+
+    .button {
+      @extend .button_outline;
+      border-width: 1px;
+
+      &.selected {
+        z-index: 2;
+        svg {
+          fill: #fff !important; 
+        }
+
+        &:nth-child(4n+1) {
+          @include button_colors($primary_button_colorset);
+        }
+  
+        &:nth-child(4n+2) {      
+          @include button_colors($success_button_colorset);
+        }
+  
+        &:nth-child(4n+3) {
+          @include button_colors($warning_button_colorset);
+        }
+  
+        &:nth-child(4n+4) {
+          @include button_colors($danger_button_colorset);
+        }
+      }
+    }
+  }
+}

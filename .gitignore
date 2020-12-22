@@ -1,0 +1,8 @@
+#Compiled folder
+public/
+
+# Dependency directories
+node_modules/
+
+#Mac store
+.DS_Store

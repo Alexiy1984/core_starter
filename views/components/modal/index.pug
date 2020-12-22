@@ -1,0 +1,30 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_button_breadcrumbs
+  - var title = 'Modal Component'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/modal.css")
+  link(rel="stylesheet", href="../../stylesheets/button.css")
+  link(rel="stylesheet", href="../../stylesheets/input-group.css")
+
+block append scripts
+  script(src="../../javascripts/bootstrap.bundle.min.js")  
+
+block content
+  .row
+    .col-12.mb-4
+      .d-flex.flex-wrap
+        .mb-2.mr-2
+          - var modal_id = 'modal_1'
+          - var button_name = 'Modal 1 button'
+          include modal 
+        .mb-2.mr-2   
+          - var modal_id = 'modal_2'
+          - var button_name = 'We use cookies!'
+          include modal_with-body-only 
+        .mb-2  
+          - var modal_id = 'modal_3'
+          - var button_name = 'Best UI releases'
+          include modal_with-large-paddings 

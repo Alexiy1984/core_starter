@@ -1,0 +1,50 @@
+<svg width="0" height="0" class="hidden">
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow down">
+    <path d="M12.75 20.09V1h-1.5v19.09l-7.21-7.21-1.06 1.06L12 22.96l9.02-9.02-1.07-1.06-7.2 7.21z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow left">
+    <path d="M11.12 4.04l-1.06-1.06L1.04 12l9.02 9.02 1.06-1.07-7.21-7.2H23v-1.5H3.91l7.21-7.21z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow right">
+    <path d="M12.88 4.04l7.21 7.21H1v1.5h19.09l-7.21 7.2 1.06 1.07L22.96 12l-9.02-9.02-1.06 1.06z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow up">
+    <path d="M2.98 10.06l1.06 1.06 7.21-7.21V23h1.5V3.91l7.2 7.21 1.07-1.06L12 1.04l-9.02 9.02z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron down">
+    <path d="M12 17.88l-8.7-8.7 1.06-1.06L12 15.76l7.64-7.64 1.06 1.06-8.7 8.7z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron left">
+    <path d="M14.82 20.7L6.12 12l8.7-8.7 1.06 1.06L8.24 12l7.64 7.64-1.06 1.06z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron right">
+    <path d="M9.18 20.7l-1.06-1.06L15.76 12 8.12 4.36 9.18 3.3l8.7 8.7-8.7 8.7z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron small down">
+    <path d="M12 16.18l-5.3-5.3 1.06-1.06L12 14.06l4.24-4.24 1.06 1.06-5.3 5.3z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron small left">
+    <path d="M13.12 17.3L7.82 12l5.3-5.3 1.06 1.06L9.94 12l4.24 4.24-1.06 1.06z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron small right">
+    <path d="M10.88 17.3l-1.06-1.06L14.06 12 9.82 7.76l1.06-1.06 5.3 5.3-5.3 5.3z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron small up">
+    <path d="M16.24 14.18L12 9.94l-4.24 4.24-1.06-1.06 5.3-5.3 5.3 5.3-1.06 1.06z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="chevron up">
+    <path d="M19.64 15.88L12 8.24l-7.64 7.64-1.06-1.06 8.7-8.7 8.7 8.7-1.06 1.06z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="triangle down">
+    <path d="M12 16l-4.33-6h8.66L12 16z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="triangle left">
+    <path d="M8 12l6-4.33v8.66L8 12z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="triangle right">
+    <path d="M16 12l-6 4.33V7.67L16 12z" ></path>
+  </symbol>
+  <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="triangle up">
+    <path d="M12 8l4.33 6H7.67L12 8z" ></path>
+  </symbol>
+</svg>

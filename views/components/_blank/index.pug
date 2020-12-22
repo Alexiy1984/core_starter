@@ -1,0 +1,35 @@
+block variables
+  - var breadcrumbs_name = sp_components_breadcrumbs
+  - var title = 'test'
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Index - #{title}
+
+    block styles
+      link(rel="stylesheet", href="../../stylesheets/index.css")
+      link(rel="stylesheet", href="../../stylesheets/breadcrumbs.css")
+
+    block scripts
+      script(src="../../javascripts/jquery.min.js")
+      script(src="../../javascripts/imask.min.js")
+      script(src="../../javascripts/main.js")
+  body
+    mixin breadcrumbs(breadcrumbs_name) 
+      .col-12.mb-5
+        ul.breadcrumbs
+          each breadcrumb in breadcrumbs_name
+            - var link = breadcrumb.link 
+            - var name = breadcrumb.name 
+            - var active = breadcrumb.active 
+            - var icon = breadcrumb.icon 
+            include ../breadcrumbs/breadcrumbs__item
+    .container
+      .row.mt-5
+        block breadcrumbs
+          +breadcrumbs(breadcrumbs_name)
+      block content
+        .row
+          .col-12 
+            p blank page extended

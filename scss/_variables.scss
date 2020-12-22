@@ -1,0 +1,175 @@
+$input-border-radius: 10px;
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "mixins";
+
+$main_theme: (
+  "primary": rgb(45, 116, 255),
+  "primary-hover": rgb(86, 144, 255),
+  "primary-active": rgb(17, 86, 219),
+  "secondary": rgba(250, 74, 106, 1),
+  "secondary-hover": rgba(251, 110, 135, 1),
+  "secondary-active": rgba(227, 31, 67, 1),
+  "dark": #666666,
+  "dark-hover": #b3b3b3,
+  "dark-active": #333333,
+  "danger": rgba(255, 78 ,78 ,1),
+  "danger-hover": rgba(255, 78 ,78 ,0.7),
+  "success": rgba(47, 254, 142 ,1),
+  "success-hover": rgba(47, 254, 142 ,0.7),
+  "warning": rgba(254, 183, 47, 1),
+  "warning-hover": rgba(254, 183, 47, 0.7),
+  "info_input_border_color": rgba(45, 116, 255, 1),
+  "success_input_border_color": rgba(1, 160, 1, 1),
+  "warning_input_border_color": rgba(254, 183, 47, 1),
+  "danger_input_border_color": rgba(250, 74, 106, 1),
+  "grey-dark_1": #f2f2f2,
+  "grey-dark_2": #e6e6e6,
+  "grey-dark_3": #b3b3b3,
+  "grey-dark_4": #666666,
+  "grey-dark_5": #333333,
+  "grey-dark_6": #000000,
+  "accent_1_1": rgba(241, 244, 250, 1),
+  "accent_1_2": rgba(213, 227, 255, 1),
+  "accent_1_3": rgba(86, 144, 255, 1),
+  "accent_1_4": rgba(45, 116, 255, 1),
+  "accent_1_5": rgba(17, 86, 219, 1),
+  "accent_2_1": rgba(254, 243, 245, 1),
+  "accent_2_2": rgba(254, 219, 225, 1),
+  "accent_2_3": rgba(251, 110, 135, 1),
+  "accent_2_4": rgba(250, 74, 106, 1),
+  "accent_2_5": rgba(227, 31, 67, 1),
+  "main-border-radius": 10px,
+  "small-border-radius": 5px,
+);
+
+//Button colors sets ->
+
+$theme: $main_theme;
+
+$outline_button_colorset : (
+  "normal_colors": (map_get($theme, 'grey-dark_6'), #fff, map_get($theme, 'grey-dark_2')), 
+  "hover_colors": (map_get($theme, 'grey-dark_4'), #fff, map_get($theme, 'grey-dark_3')),
+);
+
+$primary_button_colorset : (
+  "normal_colors": (#fff, map_get($theme, 'primary'), map_get($theme, 'primary')), 
+  "hover_colors": (#fff, map_get($theme, 'primary-hover'), rgba(0, 0, 0, 0)),
+  "active_colors": (#fff, map_get($theme, 'primary-active'), map_get($theme, 'primary-active')),
+);
+
+$success_button_colorset : (
+  "normal_colors": ( #fff, map_get($theme, 'success'), map_get($theme, 'success')), 
+  "hover_colors": (#fff, map_get($theme, 'success-hover'), rgba(0, 0, 0, 0)),
+);
+
+$warning_button_colorset : (
+  "normal_colors": ( #fff, map_get($theme, 'warning'), map_get($theme, 'warning')), 
+  "hover_colors": (#fff, map_get($theme, 'warning-hover'), rgba(0, 0, 0, 0)),
+);
+
+$danger_button_colorset : (
+  "normal_colors": ( #fff, map_get($theme, 'danger'), map_get($theme, 'danger')), 
+  "hover_colors": (#fff, map_get($theme, 'danger-hover'), rgba(0, 0, 0, 0)),
+);
+
+$input_group__info_button_colorset : (
+  "normal_colors": (#fff, map_get($theme, 'info_input_border_color'), map_get($theme, 'info_input_border_color')),
+  "hover_colors": ( #fff, rgba(map_get($theme, 'info_input_border_color'), 0.7), rgba(0, 0, 0, 0)),
+);
+
+$input_group__success_button_colorset : (
+  "normal_colors": ( #fff, map_get($theme, 'success_input_border_color'), map_get($theme, 'success_input_border_color')),
+  "hover_colors": ( #fff, rgba(map_get($theme, 'success_input_border_color'), 0.7), rgba(0, 0, 0, 0)),
+);
+
+$input_group__warning_button_colorset : (
+  "normal_colors": ( #fff, map_get($theme, 'warning_input_border_color'), map_get($theme, 'warning_input_border_color')),
+  "hover_colors": ( #fff, rgba(map_get($theme, 'warning_input_border_color'), 0.7), rgba(0, 0, 0, 0)),
+);
+
+$input_group__danger_button_colorset : (
+  "normal_colors": (  #fff, map_get($theme, 'danger_input_border_color'), map_get($theme, 'danger_input_border_color')),
+  "hover_colors": ( #fff, rgba(map_get($theme, 'danger_input_border_color'), 0.7), rgba(0, 0, 0, 0)),
+);
+
+//Button colors sets <-
+
+// Text sizes ->
+
+$breakpoints: (
+  extra-small: 320px,
+  small: 375px,
+  mobile: 575px,
+  tablet: 768px,
+  medium: 992px,
+  large: 1200px,
+);
+
+$h1-font-sizes: (
+  null: (38px, 42px, -2.5px),
+  tablet: (54px, 60px, -3.5px),
+  medium: (72px, 80px, -4.5px),
+);
+
+$h2-font-sizes: (
+  null: (32px, 40px, -1.8px),
+  tablet: (46px, 50px, -3px),
+  medium: (60px, 65px, -2.5px),
+);
+
+$h3-font-sizes: (
+  null: (26px, 30px, -0.9px),
+  tablet: (34px, 38px, -1.5px),
+  medium: (48px, 54px, -1.6px),
+);
+
+$h4-font-sizes: (
+  null: (24px, 28px, -0.8px),
+  tablet: (32px, 36px, -1.2px),
+  medium: (36px, 44px, -1.2px),
+);
+
+$h5-font-sizes: (
+  null: (22px, 26px, -0.55px),
+  tablet: (24px, 28px, -0.8px),
+  medium: (28px, 34px, -0.8px),
+);
+
+$caption-1-font-sizes: (
+  null: (18px, 20px, -0.5px),
+  tablet: (20px, 24px, -0.6px),
+);
+
+$caption-2-font-sizes: (
+  null: (17px, 20px, -0.3px),
+  tablet: (18px, 20px, -0.3px),
+);
+
+$caption-3-font-sizes: (
+  null: (15px, 18px, -0.4px),
+  tablet: (16px, 18px, -0.5px),
+);
+
+$caption-4-font-sizes: (
+  null: (13px, 15px, -0.2px),
+);
+
+$body-large-font-sizes: (
+  null: (18px, 26px, -0.6px),
+  tablet: (21px, 30px, -0.8px),
+);
+
+$body-normal-font-sizes: (
+  null: (16px, 24px, -0.6px),
+  tablet: (17px, 25px, -0.7px),
+);
+
+$body-small-font-sizes: (
+  null: (15px, 23px, -0.6px),
+);
+
+// Text sizes <-

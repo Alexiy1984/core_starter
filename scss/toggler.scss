@@ -1,0 +1,97 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+.toggler {
+  display: inline-block;
+  position: relative;
+  width: 54px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: map_get($theme, 'grey-dark_2');
+  transition: background-color 0.15s ease-in;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: block;
+    background-color: #fff;
+    content: '';
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    transition: left 0.15s ease-in;
+  }
+
+  &:hover {
+    background-color: map_get($theme, 'grey-dark_3');
+  }
+
+  &.active {
+    background-color: map_get($theme, 'primary');
+
+    &:hover {
+      background-color: map_get($theme, 'primary-active');
+    }
+
+    &::before {
+      left: calc(100% - 27px);
+    }
+  }
+
+  &_secondary {
+    @extend .toggler;
+
+    &.active {
+      background-color: map_get($theme, 'secondary');
+  
+      &:hover {
+        background-color: map_get($theme, 'secondary-active');
+      }
+    }
+  }
+
+  &_dark {
+    @extend .toggler;
+
+    &.active {
+      background-color: map_get($theme, 'dark');
+  
+      &:hover {
+        background-color: map_get($theme, 'dark-active');
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    &::before {
+      background-color: map_get($theme, 'grey-dark_1');
+    }
+
+    &:hover {
+      background-color: map_get($theme, 'grey-dark_2');
+    }
+  }
+
+  &_small {
+    @extend .toggler;
+    width: 42px;
+    height: 24px;
+    border-radius: 24px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &.active {
+      &::before {
+        left: calc(100% - 21px);
+      }
+    }
+  }
+}

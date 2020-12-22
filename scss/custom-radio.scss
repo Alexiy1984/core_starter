@@ -1,0 +1,150 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+$marker_sizes: (16px, 18px, 20px); 
+$marker_dot_sizes: (6px, 8px, 10px);
+
+.custom-radio {
+  $csrd: &;
+  display: inline-flex;
+  align-items: center; 
+  position: relative;
+  font-size: nth($marker_sizes, 2);
+
+  &__label {
+    margin: 0;
+    display: flex;
+    font-size: inherit;
+    align-items: center;
+  }
+
+  &__marker {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid map-get($theme, 'grey-dark_2');
+    border-radius: 50%;
+    width: nth($marker_sizes, 2);
+    height: nth($marker_sizes, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &::after {
+      display: block;
+      content: '';
+      width: nth($marker_dot_sizes, 2);
+      height: nth($marker_dot_sizes, 2);
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 50%;
+    }
+  }
+
+  &__input {
+    visibility: hidden;
+    margin: 0;
+    font-size: inherit;
+    width: nth($marker_sizes, 2);
+    height: nth($marker_sizes, 2);
+
+    &:checked {
+      & + #{$csrd}__marker {
+        border-color: map-get($theme, 'primary');
+        background-color: map-get($theme, 'primary');
+
+        &::after {
+          background-color: #fff;
+        }  
+      }
+    }
+  }
+
+  span + &__input {
+    margin-left: 10px;
+  }
+
+  &_left {
+    @extend #{$csrd};
+
+    #{$csrd}__marker + span {
+      margin-left: 10px;
+    }
+
+    #{$csrd}__marker {
+      right: 100%;
+      transform: translate(100%, -50%);
+    }
+  }
+
+  &_small {
+    @extend #{$csrd};
+    $mkrs: nth($marker_sizes, 1);
+    $mkds: nth($marker_dot_sizes, 1);
+    font-size: $mkrs;
+
+    #{$csrd}__input {
+      width: $mkrs;
+      height: $mkrs;
+    }
+
+    #{$csrd}__marker {
+      width: $mkrs;
+      height: $mkrs;
+
+      &::after {
+        width: $mkds;
+        height: $mkds;
+      }
+    }
+  }
+
+  &_large {
+    @extend #{$csrd};
+    $mkrs: nth($marker_sizes, 3);
+    $mkds: nth($marker_dot_sizes, 3);
+    font-size: $mkrs;
+
+    #{$csrd}__input {
+      width: $mkrs;
+      height: $mkrs;
+    }
+
+    #{$csrd}__marker {
+      width: $mkrs;
+      height: $mkrs;
+
+      &::after {
+        width: $mkds;
+        height: $mkds;
+      }
+    }
+  }
+
+  &_secondary {
+    @extend #{$csrd};
+
+    #{$csrd}__input {
+      &:checked {
+        & + #{$csrd}__marker {
+          border-color: map-get($theme, 'secondary');
+          background-color: map-get($theme, 'secondary');
+        }
+      }
+    }      
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    #{$csrd}__marker {
+      background-color: map-get($theme, 'grey-dark_2');
+
+      &::after {
+        background-color: map-get($theme, 'grey-dark_2');
+      }  
+    }
+  }
+}

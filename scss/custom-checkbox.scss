@@ -1,0 +1,147 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+$marker_sizes: (16px, 18px, 20px);
+$svg_sizes: (12px, 14px, 16px);
+
+.custom-checkbox {
+  $csch: &;
+  display: inline-flex;
+  align-items: center; 
+  position: relative;
+  font-size: nth($marker_sizes, 2);
+
+  &__label {
+    margin: 0;
+    display: flex;
+    font-size: inherit;
+    align-items: center;
+  }
+
+  &__marker {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid map-get($theme, 'grey-dark_2');
+    border-radius: map-get($theme, 'small-border-radius');
+    width: nth($marker_sizes, 2);
+    height: nth($marker_sizes, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: rgba(#000, 0);
+      width: nth($svg_sizes, 2);
+      height: nth($svg_sizes, 2);
+    }
+  }
+
+  &__input {
+    visibility: hidden;
+    margin: 0;
+    font-size: inherit;
+    width: nth($marker_sizes, 2);
+    height: nth($marker_sizes, 2);
+
+    &:checked {
+      & + #{$csch}__marker {
+        border-color: map-get($theme, 'primary');
+        background-color: map-get($theme, 'primary');
+
+        svg {
+          fill: #fff;
+        }  
+      }
+    }
+  }
+
+  span + &__input {
+    margin-left: 10px;
+  }
+
+  &_left {
+    @extend .custom-checkbox;
+
+    #{$csch}__marker + span {
+      margin-left: 10px;
+    }
+
+    #{$csch}__marker {
+      right: 100%;
+      transform: translate(100%, -50%);
+    }
+  }
+
+  &_small {
+    @extend .custom-checkbox;
+    $mkrs: nth($marker_sizes, 1);
+    $svgs: nth($svg_sizes, 1);
+    font-size: $mkrs;
+
+    #{$csch}__input {
+      width: $mkrs;
+      height: $mkrs;
+    }
+
+    #{$csch}__marker {
+      width: $mkrs;
+      height: $mkrs;
+
+      svg {
+        width: $svgs;
+        height: $svgs;
+      }
+    }
+  }
+
+  &_large{
+    @extend .custom-checkbox;
+    $mkrs: nth($marker_sizes, 3);
+    $svgs: nth($svg_sizes, 3);
+    font-size: $mkrs;
+
+    #{$csch}__input {
+      width: $mkrs;
+      height: $mkrs;
+    }
+
+    #{$csch}__marker {
+      width: $mkrs;
+      height: $mkrs;
+
+      svg {
+        width: $svgs;
+        height: $svgs;
+      }
+    }
+  }
+
+  &_secondary {
+    @extend .custom-checkbox;
+
+    #{$csch}__input {
+      &:checked {
+        & + #{$csch}__marker {
+          border-color: map-get($theme, 'secondary');
+          background-color: map-get($theme, 'secondary');
+        }
+      }
+    }      
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    #{$csch}__marker {
+      background-color: map-get($theme, 'grey-dark_2');
+
+      svg {
+        fill: map-get($theme, 'grey-dark_2');
+      }  
+    }
+  }
+}

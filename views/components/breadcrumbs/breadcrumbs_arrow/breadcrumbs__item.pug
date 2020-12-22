@@ -1,0 +1,9 @@
+li(class=active ? "active" : "")
+  a(href= link)
+    if icon
+      svg 
+        use(xlink:href= icon)
+    span= name
+    if i_index < length - 1  
+      svg
+        use(xlink:href="../../assets/svg/navigation-sprite/navigation-sprite.svg#chevron small right")

@@ -1,0 +1,98 @@
+@import 'variables';
+
+$theme: $main_theme;
+
+.breadcrumbs {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  li {
+    position: relative;
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: map_get($theme, 'grey-dark_3');
+    }
+
+    a {
+      text-decoration: none;
+      color: map_get($theme, 'grey-dark_3');
+      display: flex;
+      align-items: center;
+      transition: color 0.15s ease-in;
+
+      svg {
+        margin-right: 10px;
+        transition: fill 0.15s ease-in;
+      }
+
+      span {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      &:hover {
+        color: map_get($theme, 'grey-dark_4');
+
+        svg {
+          fill: map_get($theme, 'grey-dark_4');
+        }
+      }
+    }
+
+    &.active {
+      a {
+        color: map_get($theme, 'grey-dark_6');
+        pointer-events: none;
+
+        svg {
+          fill: map_get($theme, 'grey-dark_6');
+        }
+      }
+    }
+
+    &::after {
+      position: relative;
+      content: "\002F";
+      color: map_get($theme, 'grey-dark_3');
+      right: 0;
+      margin: 0 12px;
+      transition: color 0.15s ease-in;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    &:hover {
+      &::after {
+        color: map_get($theme, 'grey-dark_4');
+      }
+    }
+  }
+
+  &_arrow {
+    @extend .breadcrumbs;
+
+    li {
+      &::after {
+        display: none;
+      }
+
+      & > svg {
+        margin: 0 12px;
+      }
+    }
+  }
+}

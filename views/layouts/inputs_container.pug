@@ -1,0 +1,78 @@
+div.container
+  div.row
+    div(class='col-12 mb-3')
+      div(class='input-group input-group_small mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text') text 1
+          input(class='form-control' type='text' name='text-1')
+          div(class='input-group-append')
+            span(class='input-group-text') text 2
+    div(class='col-12 mb-3')
+      div(class='input-group mb-3')
+        div(class='input-group-prepend')
+          span(class='input-group-text') text 1
+        input(class='form-control' type='text' name='text-1')
+        div(class='input-group-append')
+          span(class='input-group-text') text 2
+    div(class='col-12 mb-3')
+      div(class='input-group input-group_large mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text')
+              include ../components/icon_lightning
+          input(class='form-control' type='text' name='text-1')
+          div(class='input-group-append')
+            span(class='input-group-text_nobg')
+              include ../components/icon_eye
+    div(class='col-12 col-md-6 mb-3')
+      include ../components/input-group/input-group_password_prepend
+    div(class='col-12 col-md-6 mb-3')
+      include ../components/input-group/input-group_password
+    div(class='col-12 col-md-6 mb-3')
+      div(class='input-group_noborder input-group_info mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text_nobg')
+              include ../components/icon_lightning
+          input(class='form-control' type='text' name='text-1')
+    div(class='col-12 col-md-6 mb-3')
+      div(class='input-group_noborder input-group_succes mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text_nobg')
+              include ../components/icon_lightning
+          input(class='form-control' type='text' name='text-1') 
+    div(class='col-12 col-md-6 mb-3')
+      div(class='input-group_noborder input-group_warning mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text_nobg')
+              include ../components/icon_lightning
+          input(class='form-control' type='text' name='text-1')
+    div(class='col-12 col-md-6 mb-3')
+      div(class='input-group_noborder input-group_danger mb-3')
+          div(class='input-group-prepend')
+            span(class='input-group-text_nobg')
+              include ../components/icon_lightning
+          input(class='form-control' type='text' name='text-1')  
+    dic(class='col-12 mt-3 mb-5')
+      ul.breadcrumbs_arrow
+            each breadcrumb, index in mp_form_control_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active
+              - var i_index = index 
+              - var length = mp_form_control_breadcrumbs.length
+              include ../components/breadcrumbs/breadcrumbs_arrow/breadcrumbs__item                           
+    div(class='col-12 col-md-3 mb-3')
+      div(class='form-group')
+        input(class='form-control' type='text' placeholder='Normal text')
+    div(class='col-12 col-md-3 mb-3')
+      div(class='form-group')
+        input(class='form-control_info' type='text' placeholder='Info text')    
+    div(class='col-12 col-md-3 mb-3')
+      div(class='form-group')
+        input(class='form-control_succes' type='text' placeholder='Succes text')
+    div(class='col-12 col-md-3 mb-3')
+      div(class='form-group')
+        input(class='form-control_warning' type='text' placeholder='Warning text')  
+    div(class='col-12 col-md-3 mb-3')
+      div(class='form-group')
+        input(class='form-control_danger' type='text' placeholder='Danger text')                               
+

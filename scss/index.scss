@@ -1,0 +1,144 @@
+@import 'variables';
+
+@import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/tables";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/custom-forms";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/card";
+// @import "node_modules/bootstrap/scss/breadcrumb";
+@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/jumbotron";
+// @import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/progress";
+@import "node_modules/bootstrap/scss/media";
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/toasts";
+@import "node_modules/bootstrap/scss/tooltip";
+@import "node_modules/bootstrap/scss/popover";
+@import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/spinners";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/print";
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+.caption {
+  &_1 {
+    @include font-size($caption-1-font-sizes);
+  
+    &_medium {
+      @include font-size($caption-1-font-sizes);
+      font-weight: 500;
+    }
+  }
+
+  &_2 {
+    @include font-size($caption-2-font-sizes);
+  
+    &_medium {
+      @include font-size($caption-2-font-sizes);
+      font-weight: 500;
+    }
+  }
+  
+  &_3 {
+    @include font-size($caption-3-font-sizes);
+  
+    &_medium {
+      @include font-size($caption-3-font-sizes);
+      font-weight: 500;
+    }
+  }
+  
+  &_4 {
+    @include font-size($caption-4-font-sizes);
+  
+    &_medium {
+      @include font-size($caption-4-font-sizes);
+      font-weight: 500;
+    }
+  }
+}
+
+.body {
+  &_large {
+    font-weight: 400;
+    @include font-size($body-large-font-sizes);
+  }
+
+  &_normal {
+    font-weight: 400;
+    @include font-size($body-normal-font-sizes);
+  }
+
+  &_small {
+    font-weight: 400;
+    @include font-size($body-small-font-sizes);
+  }
+}
+
+.text {
+  &_thin {
+    font-weight: 100;
+  }
+
+  &_extra-light {
+    font-weight: 200;
+  }
+
+  &_light {
+    font-weight: 300;
+  }
+
+  &_medium {
+    font-weight: 500;
+  }
+
+  &_semi-bold {
+    font-weight: 600;
+  }
+
+  &_bold {
+    font-weight: 700;
+  }
+
+  &_extra-bold {
+    font-weight: 800;
+  }
+
+  &_heavy {
+    font-weight: 900;
+  }
+
+  @for $text_color_index from 1 to 7 {
+    &_grey-dark_#{$text_color_index} {
+      color: map_get($theme, 'grey-dark_' + $text_color_index);
+    }
+  }
+}
+

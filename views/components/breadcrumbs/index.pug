@@ -1,0 +1,26 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_breadcrumbs_breadcrumbs
+  - var title = 'Breadcrumns component'
+
+block append styles
+
+block append scripts
+
+block breadcrumbs
+
+block content
+  .row
+    .col-12.mb-4      
+      include breadcrumbs
+    .col-12.mb-4 
+      include breadcrumbs_mixin-style 
+    .col-12.mb-4 
+      include breadcrumbs_mixin-style_with-icon   
+    .col-12.mb-4 
+      include breadcrumbs_with-icons
+    .col-12.mb-4 
+      include breadcrumbs_arrow
+    .col-12.mb-4 
+      include breadcrumbs_arrow_with-icon    

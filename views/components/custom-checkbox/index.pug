@@ -1,0 +1,30 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_custom_checkbox_breadcrumbs
+  - var title = 'Custom checkbox'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/custom-checkbox.css")
+
+block append scripts
+
+block content
+  .row
+    .col-12.mb-4.d-flex.flex-wrap
+      include custom-checkbox
+      .ml-3
+      include custom-checkbox_disabled
+      .ml-3
+      include custom-checkbox_checked
+    .col-12.mb-4.d-flex.flex-wrap
+      include custom-checkbox_left
+      .ml-3
+      include custom-checkbox_secondary
+      .ml-3
+      include custom-checkbox_small
+      .ml-3
+      include custom-checkbox_large
+
+
+

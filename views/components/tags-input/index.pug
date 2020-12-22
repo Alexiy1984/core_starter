@@ -1,0 +1,31 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_components_breadcrumbs
+  - var title = 'test'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/tag.css")
+  link(rel="stylesheet", href="../../stylesheets/tags-input.css")
+
+block append scripts
+
+block append breadcrumbs
+
+block content
+  .row
+    .col-12.mb-4
+      - var tag_id = 'tags-input-1';
+      - var tag_class = 'tags-input';
+      - var tag_values = ['one', 'two', 'typography', 'image'];
+      include tags-input
+      .mb-3
+      - var tag_id = 'tags-input-2';
+      - var tag_class = 'tags-input_small';
+      - var tag_values = ['js', 'test', 'svg', 'font', 'java'];
+      include tags-input
+      .mb-3
+      - var tag_id = 'tags-input-3';
+      - var tag_class = 'tags-input_large';
+      - var tag_values = ['js', 'python', 'php', 'java', 'style'];
+      include tags-input

@@ -1,0 +1,16 @@
+@import 'variables.scss';
+
+$theme: $main_theme;
+
+.bg {
+  @for $i from 1 through 5 {
+    $color_accent_1: 'accent_1_' + $i;
+    $color_accent_2: 'accent_2_' + $i;
+    &-accent_1_#{$i} {
+      background-color: map_get($theme, $color_accent_1);
+    }
+    &-accent_2_#{$i} {
+      background-color: map_get($theme, $color_accent_2);
+    }
+  }
+}

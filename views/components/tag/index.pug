@@ -1,0 +1,28 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Index
+    link(rel="stylesheet", href="../../stylesheets/index.css")
+    link(rel="stylesheet", href="../../stylesheets/breadcrumbs.css")
+
+    link(rel="stylesheet", href="../../stylesheets/tag.css")
+    script(src="../../javascripts/jquery.min.js")
+  body
+    .container
+      .row.my-5
+        .col-12.mb-3
+          ul.breadcrumbs
+            each breadcrumb in sp_tag_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include ../breadcrumbs/breadcrumbs__item
+      .row
+        .col-12.mb-2
+         include tag
+         include tag_accent_1
+         include tag_accent_2 
+         include tag_with-icon
+         include tag_accent_1_with-icon      

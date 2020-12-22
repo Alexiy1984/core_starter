@@ -1,0 +1,14 @@
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="Down">
+    <path d="M5 6L.67 0h8.66L5 6z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" id="Right">
+    <path d="M8 5L2 9.33V.67L8 5z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 10" id="Left">
+    <path d="M0 5L6 .67v8.66L0 5z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="Up">
+    <path d="M5 0l4.33 6H.67L5 0z"></path>
+  </symbol>
+</svg>

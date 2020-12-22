@@ -1,0 +1,28 @@
+//
+  Pills component
+    Main class
+      nav-pills
+    Has 
+      Size modificator classes
+        nav-pills_small : use with main class
+        nav-pills_large : use with main class 
+nav
+  div(class="nav nav-pills" id="nav-tab" role="tablist")
+    a(class="nav-item nav-link active" id="pill-1-tab" data-toggle="tab" href="#pill-1" role="tab" aria-controls="pill-1" aria-selected="true")
+      span Pill 1
+      svg
+        use(xlink:href="../../assets/svg/base-sprite/base-sprite.svg#Mail")
+    a(class="nav-item nav-link" id="pill-2-tab" data-toggle="tab" href="#pill-2" role="tab" aria-controls="pill-2" aria-selected="false")
+      svg
+        use(xlink:href="../../assets/svg/base-sprite/base-sprite.svg#Flash")
+      span Pill 2
+    a(class="nav-item nav-link" id="pill-3-tab" data-toggle="tab" href="#pill-3" role="tab" aria-controls="pill-3" aria-selected="false")
+      svg
+        use(xlink:href="../../assets/svg/base-sprite/base-sprite.svg#Message")
+      span Pill 3
+      svg
+        use(xlink:href="../../assets/svg/base-sprite/base-sprite.svg#Notification")
+div(class="tab-content" id="nav-tabContent")
+  div(class="tab-pane fade show active" id="pill-1" role="tabpanel" aria-labelledby="pill-1-tab") Pill 1 text
+  div(class="tab-pane fade" id="pill-2" role="tabpanel" aria-labelledby="pill-2-tab") Pill 2 text
+  div(class="tab-pane fade" id="pill-3" role="tabpanel" aria-labelledby="pill-3-tab") Pill 3 text

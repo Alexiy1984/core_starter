@@ -1,0 +1,16 @@
+mixin item(text='link', link='#', add_class='')
+  li(class='page-item ' + add_class) 
+    a(class='page-link' href= link)= text
+
+ul(class='pagination_dark')
+  +item(1, '#', 'disabled')
+  +item(2, '#')
+  +item(3, '#') 
+  +item(4, '#', 'active')  
+  +item(5, '#') 
+  +item(6, '#')
+
+
+
+
+   

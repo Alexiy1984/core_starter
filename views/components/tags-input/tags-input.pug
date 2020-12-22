@@ -1,0 +1,12 @@
+//- Tags-input component
+  Main Class
+    tags-input
+  Size classes
+    tags-input_small
+    Tags-input_large  
+  Pay attention that, this element is not rendered without script
+  This component use another: tag component 
+
+- var values = tag_values ? tag_values.join(','): '';
+
+input(class=tag_class ? tag_class : 'tags-input' id=tag_id ? tag_id : 'tag-default-id' value=values)

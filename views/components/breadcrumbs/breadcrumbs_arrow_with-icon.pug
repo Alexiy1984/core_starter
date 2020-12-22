@@ -1,0 +1,9 @@
+ul.breadcrumbs_arrow
+  each breadcrumb, index in sp_breadcrumbs_breadcrumbs
+    - var link = breadcrumb.link 
+    - var name = breadcrumb.name 
+    - var active = breadcrumb.active
+    - var i_index = index
+    - var length = sp_breadcrumbs_breadcrumbs.length
+    - var icon = breadcrumb.icon
+    include ./breadcrumbs_arrow/breadcrumbs__item

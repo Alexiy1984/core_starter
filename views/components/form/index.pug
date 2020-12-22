@@ -1,0 +1,30 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_form_breadcrumbs
+  - var title = 'Form'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/form.css")
+
+block append scripts
+
+block content
+  .row
+    .col-4.mb-3
+      include form-control_small
+    .col-4.mb-3
+      include form-control
+    .col-4.mb-3
+      include form-control_large    
+    .col-3.mb-3
+      include form-control_info
+    .col-3.mb-3
+      include form-control_succes
+    .col-3.mb-3
+      include form-control_warning
+    .col-3.mb-3
+      include form-control_danger   
+    .col-12.mb-3
+      include form-group_textarea-with-label  
+        

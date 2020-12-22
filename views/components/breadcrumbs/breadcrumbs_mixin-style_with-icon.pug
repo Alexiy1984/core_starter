@@ -1,0 +1,19 @@
+//-
+  Breadcrumbs component (mixin style)
+    Main class
+      breadcrumbs
+      
+mixin breadcrumbs__item(name='link', link='#', add_class=false, icon)
+  li(class= add_class ? 'active' : '')
+    if icon
+      a(href= link)
+        svg 
+          use(xlink:href= icon)
+        span= name
+    else 
+      a(href= link)= name
+
+ul.breadcrumbs
+  +breadcrumbs__item('Main', '/')
+  +breadcrumbs__item('Components', '/components', false, '../../assets/svg/base-sprite/base-sprite.svg#Box')
+  +breadcrumbs__item('Breadcrumbs', '/components/breadcrumbs', true, '../../assets/svg/base-sprite/base-sprite.svg#Box')

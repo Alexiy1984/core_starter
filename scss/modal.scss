@@ -1,0 +1,102 @@
+@import 'variables';
+
+@import "node_modules/bootstrap/scss/modal";
+
+$theme: $main_theme;
+
+.modal {
+  &-content {
+    padding: 15px 0;
+    border-radius: map_get($theme, 'main-border-radius');
+
+    &_thin {
+      @extend .modal-content;
+      padding: 58px 0 62px;
+
+      .modal-header, 
+      .modal-body,
+      .modal-footer {
+        padding: 0 60px;
+      }
+
+      .modal-header {
+        .close {
+          margin-top: -65px;
+          margin-right: -61px;
+        }
+      }
+    }
+  }
+
+  &-header {
+    border-bottom: none;
+    padding: 0 16px;
+
+    .close {
+      padding: 0 15px 0 15px;
+      font-size: 18.8px;
+      margin-top: -22px;
+    }
+  }
+
+  &-body {
+    padding: 0 16px;
+
+    .close {
+      font-size: 18.8px;
+      padding: 0 5px 0 15px;
+    }
+  }
+
+  &-footer {
+    border-top: none;
+    padding: 0 16px;
+  }
+
+  &-dialog {
+    &_wide {
+      @extend .modal-dialog;
+    }
+  }
+
+  &__combined-item {
+    display: flex;
+    flex-wrap: wrap;
+    
+    & > * {
+      margin-bottom: 10px;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 575px) {
+  .modal {
+    &__combined-item {
+      flex-wrap: nowrap;
+
+      & > * {
+        width: auto;
+        margin-right: 10px;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .modal {
+    &-dialog {
+      &_wide {
+        min-width: 660px;
+      }
+    }
+  }
+}

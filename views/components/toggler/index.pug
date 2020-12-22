@@ -1,0 +1,39 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Toggler Index
+    link(rel="stylesheet", href="../../stylesheets/index.css")
+    link(rel="stylesheet", href="../../stylesheets/breadcrumbs.css")
+
+    link(rel="stylesheet", href="../../stylesheets/toggler.css")
+    script(src="../../javascripts/jquery.min.js")
+  body
+    .container
+      .row.my-5
+        .col-12.mb-3
+          ul.breadcrumbs
+            each breadcrumb in sp_toggler_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include ../breadcrumbs/breadcrumbs__item
+      .row
+        .col-12.mb-4
+          include toggler
+          include toggler_active
+          include toggler_disabled
+        .col-12.mb-4
+          include toggler_secondary
+          include toggler_secondary_active
+          include toggler_disabled  
+        .col-12.mb-4
+          include toggler_small
+          include toggler_small_active
+          include toggler_small_disabled  
+        .col-12.mb-4
+          include toggler_dark_small
+          include toggler_dark_small_active
+          include toggler_small_disabled    
+

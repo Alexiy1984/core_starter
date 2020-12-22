@@ -1,0 +1,26 @@
+//-
+  Modal component
+    Main class
+      modal
+    Has
+      Size modificator class for modal elements:
+        modal-dialog:  
+          modal-dialog_wide: should be used with class modal-dialog
+      Inner indents class for modal elements:
+        modal-content:
+          
+//- Button trigger modal
+button.button_primary(type='button' data-toggle='modal' data-target=`#${modal_id}`)= button_name
+//- Modal
+.modal.fade(tabindex='-1' role='dialog' aria-labelledby=`${modal_id}Label` aria-hidden='true' id= modal_id)
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5.modal-title(id= `${modal_id}Label`) Modal title
+        button.button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti voluptatum accusantium minima culpa laborum temporibus voluptate ullam praesentium, enim illum quas maiores facere repudiandae non!
+      .modal-footer
+        button.button_outline(type='button' data-dismiss='modal') Close
+        button.button_primary(type='button') Save changes

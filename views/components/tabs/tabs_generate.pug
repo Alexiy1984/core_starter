@@ -1,0 +1,16 @@
+if tabs_id 
+  nav
+    div(class=`nav nav-tabs ${tabs_color_class} ${tabs_size_class}` id=tabs_id role="tablist")
+      each tab, index in tabs_content
+        if index == 0
+          - var classes = 'nav-item nav-link active';
+        else 
+          - var classes = 'nav-item nav-link';
+        a(class=classes id=`${tabs_id}-${index}-tab` data-toggle="tab" href=`#${tabs_id}-${index}-content` role="tab" aria-controls=`${tabs_id}-${index}-content` aria-selected="false") #{tab.tabname}
+  div(class="tab-content" id="nav-tabContent")
+    each tab, index in tabs_content
+      if index == 0
+        - var classes = 'tab-pane fade show active';
+      else 
+        - var classes = 'tab-pane fade';
+      div(class=classes id=`${tabs_id}-${index}-content` role="tabpanel" aria-labelledby=`${tabs_id}-${index}-tab`) #{tab.tabcontent}

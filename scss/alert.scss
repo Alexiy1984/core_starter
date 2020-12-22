@@ -1,0 +1,255 @@
+@import 'variables';
+
+$theme: $main-theme;
+
+.alert {
+  position: fixed;
+  top: calc(-100% - 100px);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: map_get($theme, 'main-border-radius');
+  background: #fff;
+  box-shadow: 0px 2px 10px map_get($theme, 'grey-dark_2');
+  font-size: 18px;
+  padding: 0 19px 0 16px;
+  cursor: pointer;
+  
+  &.show {
+    top: 30px;
+    animation: show_alert 0.5s ease-in-out;
+  }
+
+  &.hide {
+    top: calc(-100% - 100px);
+    animation: hide_alert 0.5s ease-in-out;
+  }
+  
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: map_get($theme, 'accent_1_4');
+
+    + span {
+      margin-left: 13px;
+    }
+  }
+
+  &.left {
+    @extend .alert;
+    top: 30px;
+    left: calc(-100% - 100px);
+
+    &.show {
+      left: 50%;
+      animation: show_alert_left 0.5s ease-in-out;
+    }
+
+    &.hide {
+      left: calc(-100% - 100px);
+      animation: hide_alert_left 0.5s ease-in-out;
+    }
+  }
+
+  &_success {
+    @extend .alert;
+    color: #fff;
+    background-color: map_get($theme, 'success');
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &_warning {
+    @extend .alert;
+    color: #fff;
+    background-color: map_get($theme, 'warning');
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &_danger {
+    @extend .alert;
+    color: #fff;
+    background-color: map_get($theme, 'danger');
+
+    svg {
+      fill: #fff;
+    }
+  }
+  
+  &_large {
+    @extend .alert;
+    height: auto;
+    padding: 20px;
+    min-width: calc(100% - 30px);
+    cursor: default;
+    flex-direction: column;
+
+    .alert__icon {
+      position: relative;
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map_get($theme, 'accent_1_4');
+      margin-right: auto;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        fill: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } 
+    }
+
+    .alert__content {
+      margin-right: 0;
+      margin-top: 14px;
+    }
+
+    .alert__title {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.6px;
+      margin-bottom: 1px;
+    }
+
+    .alert__message {
+      font-size: 15px;
+      line-height: 23px;
+      letter-spacing: -0.6px;
+      margin-bottom: 0;
+    }
+
+    .alert__close {
+      position: absolute;
+      right: 20px;
+      border: none;
+      background: none;
+      outline: none;
+      align-self: stretch;
+      font-size: 24px;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      svg {
+        fill: map-get($theme, 'grey-dark_3');
+        transition: fill 0.15s ease-in;
+      }
+
+      &:hover {
+        svg {
+          fill: map-get($theme, 'grey-dark_4');
+        }
+      }
+    }
+
+    &_success {
+      @extend .alert_large;
+
+      .alert__icon {
+        background-color: map-get($theme, 'success');
+      }
+    }
+
+    &_warning {
+      @extend .alert_large;
+
+      .alert__icon {
+        background-color: map-get($theme, 'warning');
+      }
+    }
+
+    &_danger {
+      @extend .alert_large;
+
+      .alert__icon {
+        background-color: map-get($theme, 'danger');
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .alert {
+    &_large {
+      min-width: 520px;
+    }
+  }
+}
+
+@media (min-width: 376px) {
+  .alert {
+    &_large {
+      flex-direction: row;
+
+      .alert__icon {
+        margin-right: 14px;
+      }
+
+      .alert__content {
+        margin-top: 0;
+        margin-right: 14px;
+      }
+
+      .alert__close {
+        position: relative;
+        right: 0;
+      }
+    }
+  }
+}
+
+@keyframes show_alert {
+  0% {
+    top: calc(-100% - 100px);
+  }
+  80% {
+    top: 32px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+
+@keyframes hide_alert {
+  from {
+    top: 30px;
+  }
+  to {
+    top: calc(-100% - 100px);
+  }
+}
+
+@keyframes show_alert_left {
+  0% {
+    left: calc(-100% - 100px);
+  }
+  80% {
+    left: calc(50% + 10px);
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes hide_alert_left {
+  from {
+    left: 50%;
+  }
+  to {
+    left: calc(-100% - 100px);
+  }
+}

@@ -1,0 +1,13 @@
+//- Button trigger modal
+button.button_danger(type='button' data-toggle='modal' data-target=`#${modal_id}`)= button_name
+//- Modal
+.modal.fade(tabindex='-1' role='dialog' aria-labelledby=`${modal_id}Label` aria-hidden='true' id= modal_id)
+  .modal-dialog.modal-dialog_wide(role='document')
+    .modal-content
+      .modal-body
+        p.caption_1_medium.mb-0 We use cookies!
+        .d-flex.flex-column.flex-md-row
+          p.body_small.mt-2.order-2.order-md-1(style='max-width: 390px;') This website use cookies to ensure you’re getting the bestexperience on our website.
+          button.button_outline.button_small.ml-0.ml-md-3.order-3.order-md-2(type='button' data-dismiss='modal' aria-label='Close') Got it, Thanks!
+          button.close.button.button_small.ml-auto.order-1.order-md-3(type='button' data-dismiss='modal' aria-label='Close')
+            span.modal-close-button(aria-hidden='true') ×

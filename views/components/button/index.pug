@@ -1,0 +1,43 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_button_breadcrumbs
+  - var title = 'Button'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/button.css")
+
+block content
+  .row
+    .col-12.d-flex.align-items-center.mt-4.mb-4
+      include button
+      .ml-3
+      include button_small
+      .ml-3
+      include button_large
+      .ml-3
+    .col-12.d-flex.align-items-center.mb-4
+      include button_outline
+      .ml-3
+      include button_disabled
+      .ml-3
+      include button_danger
+      .ml-3
+      include button_succes
+      .ml-3
+      include button_warning
+    .col-12.d-flex.align-items-center
+      include combined_button
+    .col-6
+      p
+        span#multiple
+    .col-6
+      p
+        span#select   
+    .col-12
+      include button_rounded 
+      include button_rounded_small  
+      include button_rounded_large        
+
+  script 
+   include _inner-script.js

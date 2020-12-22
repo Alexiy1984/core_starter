@@ -1,0 +1,209 @@
+@import 'variables';
+
+@import "node_modules/bootstrap/scss/pagination";
+
+$theme: $main_theme;
+
+.pagination {
+  height: 50px;
+  border-color: map_get($theme, 'grey-dark_2');
+
+  .page-item {
+    height: 100%;
+    border-color: inherit;
+
+    .page-link {
+      white-space: nowrap;
+      height: 100%;
+      font-size: 18px;
+      padding: 15px 20px;
+      color: map_get($theme, 'grey-dark_3');
+      border-left-color: rgba(0, 0, 0, 0);
+      border-right-color: rgba(0, 0, 0, 0);
+      user-select: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      svg {
+        height: 18px;
+        width: 18px;
+        fill: map_get($theme, 'grey-dark_3');
+
+        & * {
+          fill: inherit;
+          stroke: inherit;
+        }
+      }
+    }
+
+    &:first-child {
+      .page-link {
+        border-top-left-radius : map_get($theme, 'main-border-radius');
+        border-bottom-left-radius : map_get($theme, 'main-border-radius');
+        border-left-color: inherit;
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        border-top-right-radius : map_get($theme, 'main-border-radius');
+        border-bottom-right-radius : map_get($theme, 'main-border-radius');
+        border-right-color: inherit;
+      }
+    }
+
+    &:hover {
+      .page-link {
+        transition: background-color 0.15s ease-in, color 0.15s ease-in;
+        background-color: map_get($theme, 'accent_1_3');
+        color: #fff;
+      }
+    }
+
+    &.active {
+      .page-link {
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+        background-color: map_get($theme, 'accent_1_4');
+        color: #fff;
+      }
+    }
+    
+    &.control {
+      .page-link {
+        transition: color 0.15s ease-in;
+        display: inline-flex;
+        align-items: center;
+        background-color: #fff;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      &:hover {
+        color: map_get($theme, 'accent_1_4');
+
+        svg {
+          fill: map_get($theme, 'accent_1_4');
+        }
+      }
+    }
+
+    &.delimiter {
+      pointer-events: none;
+    }
+
+    &.counter {
+      pointer-events: none;
+      min-width: 85px;
+      text-align: center;
+
+      .page-link {
+        color: map_get($theme, 'grey-dark_3');
+
+        &:hover,
+        &:active,
+        &:visited {
+          color: map_get($theme, 'grey-dark_3');
+          background-color: #fff;
+        }
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      
+      .page-link {
+        background-color: map_get($theme, 'grey-dark_1');
+        color: map_get($theme, 'grey-dark_2');
+      }  
+    }
+  }
+
+  &_secondary {
+    @extend .pagination;
+
+    .page-item {
+      &:hover {
+        .page-link {
+          background-color: map_get($theme, 'accent_2_3');
+        }
+      }
+  
+      &.active {
+        .page-link {
+          background-color: map_get($theme, 'accent_2_4');
+        }
+      }
+      
+      &.control {
+        .page-link {
+          background-color: #fff;
+        }
+
+        &:hover {
+          color: map_get($theme, 'accent_2_4');
+  
+          svg {
+            fill: map_get($theme, 'accent_2_4');
+          }
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        
+        .page-link {
+          background-color: map_get($theme, 'grey-dark_1');
+          color: map_get($theme, 'grey-dark_2');
+        }  
+      }
+    }
+  }
+
+  &_dark {
+    @extend .pagination;
+
+    .page-item {
+      &:hover {
+        .page-link {
+          background-color: map_get($theme, 'grey-dark_4');
+        }
+      }
+  
+      &.active {
+        .page-link {
+          background-color: map_get($theme, 'grey-dark_5');
+        }
+      }
+      
+      &.control {
+        .page-link {
+          background-color: #fff;
+        }
+
+        &:hover {
+          color: map_get($theme, 'grey-dark_4');
+  
+          svg {
+            fill: map_get($theme, 'grey-dark_4');
+          }
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        
+        .page-link {
+          background-color: map_get($theme, 'grey-dark_1');
+          color: map_get($theme, 'grey-dark_2');
+        }  
+      }
+    }
+  }
+
+  &_short {
+    @extend .pagination;
+  }
+}

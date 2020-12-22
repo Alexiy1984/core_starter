@@ -1,0 +1,8 @@
+li(class=active ? "active" : "")
+  if icon
+    a(href= link)
+      svg 
+        use(xlink:href= icon)
+      span= name
+  else 
+    a(href= link)= name

@@ -1,0 +1,29 @@
+extends ../_blank/index.pug
+
+block variables
+  - var breadcrumbs_name = sp_custom_radio_breadcrumbs
+  - var title = 'Custom radio'
+
+block append styles
+  link(rel="stylesheet", href="../../stylesheets/custom-radio.css")
+
+block append scripts
+
+block append breadcrumbs
+
+block content
+  .row
+    .col-12.mb-4.d-flex.flex-wrap
+      include custom-radio
+      .ml-3
+      include custom-radio_disabled
+      .ml-3
+      include custom-radio_checked
+    .col-12.mb-4.d-flex.flex-wrap  
+      include custom-radio_small
+      .ml-3
+      include custom-radio_left
+      .ml-3
+      include custom-radio_large
+      .ml-3
+      include custom-radio_secondary

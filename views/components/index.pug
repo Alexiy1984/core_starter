@@ -1,0 +1,37 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Index
+    link(rel="stylesheet", href="../stylesheets/index.css")
+    link(rel="stylesheet", href="../stylesheets/breadcrumbs.css")
+
+    //- past style here
+    script(src="../javascripts/jquery.min.js")
+  body
+    .container
+      .row.my-5
+        .col-12.mb-3
+          ul.breadcrumbs
+            each breadcrumb in sp_components_breadcrumbs
+              - var link = breadcrumb.link 
+              - var name = breadcrumb.name 
+              - var active = breadcrumb.active 
+              - var icon = breadcrumb.icon 
+              include breadcrumbs/breadcrumbs__item
+      .row
+        .col-12
+          ul: li: a(href='button/') button
+          ul: li: a(href='breadcrumbs/') breadcrumbs
+          ul: li: a(href='form/') form
+          ul: li: a(href='input-group/') input-group
+          ul: li: a(href='dropdown/') dropdown
+          ul: li: a(href='tabs/') tabs
+          ul: li: a(href='pagination/') pagination
+          ul: li: a(href='tag/') tag
+          ul: li: a(href='toggler/') toggler
+          ul: li: a(href='modal/') modal
+          ul: li: a(href='alert/') alert
+          ul: li: a(href='tags-input/') tags-input
+          ul: li: a(href='custom-checkbox/') custom-checkbox
+          ul: li: a(href='custom-radio/') custom-radio
